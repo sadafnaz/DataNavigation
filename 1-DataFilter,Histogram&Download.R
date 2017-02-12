@@ -31,11 +31,8 @@ options(shiny.maxRequestSize=100*1024^2)
 #global option if using table option in many tabs, etc
 
 conn <- dbConnect(drv = RMySQL::MySQL(),
-                  dbname = "newschema",host = "localhost",username = "root",password = "shamim786")
-                  #dbname = "newschema",
-                  #host = "scps-web1.scu.edu.au",
-                  #username = "cropstore",
-                  #password = "s74sv_HuMHXPJ")
+                  dbname = "newschema",host = "localhost",username = "root",password = "1234")
+ 
 rs <- dbSendQuery(conn = conn, 'select id,species,plant_population,project_descriptor,trial_year,country,descriptor_name,score_value from abc')
 Data <-fetch(rs, n=-1)
 rs1<-dbSendQuery(conn = conn, 'select * from abc')
